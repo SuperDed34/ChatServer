@@ -13,7 +13,7 @@ public class ServerController {
     private Socket client;
     private Message msg = new Message();
     private ArrayList<User> userList= new ArrayList<>();
-    private ArrayList<ServerThreader> connectionList = new ArrayList<ServerThreader>();
+    public static ArrayList<ServerThreader> connectionList = new ArrayList<ServerThreader>();
 
 
     public ServerController() throws IOException {
@@ -26,6 +26,7 @@ public class ServerController {
             System.out.println(msg.getTechFormattedMessage("User " + client.getInetAddress()+ "connected"));
             connectionList.add(new ServerThreader(client));
             userList.add(new User("test", client.getInetAddress(), "test"));
+
         }
     }
 
