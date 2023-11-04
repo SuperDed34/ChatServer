@@ -1,10 +1,13 @@
 package org.objects;
 
-public class User {
-    private String name, email, IPAdress, password;
-    private Boolean isAuthorized;
+import java.net.InetAddress;
 
-    public User(String name, String IPAdress, String password){
+public class User {
+    private final String name, password;
+    private Boolean isAuthorized;
+    private final InetAddress IPAdress;
+
+    public User(String name, InetAddress IPAdress, String password){
         this.name = name;
         this.IPAdress = IPAdress;
         this.password = password;
@@ -18,13 +21,10 @@ public class User {
         return password;
     }
 
-    public String getIPAdress() {
+    public InetAddress getIPAdress() {
         return IPAdress;
     }
 
-    public String getEmail() {
-        return email;
-    }
 
     public void setAuthorized(Boolean authorized) {
         isAuthorized = authorized;

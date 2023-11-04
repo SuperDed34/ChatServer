@@ -7,9 +7,6 @@ public class Message {
     private String formattedMessage, formattedDate, techMessage;
     private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy-hh:mm:ss");
 
-    public void setFormattedMessage(String formatted_message) {
-        this.formattedMessage = formatted_message;
-    }
 
     public String getDate(){
         Date date = new Date();
@@ -20,5 +17,10 @@ public class Message {
     public String getTechFormattedMessage(String msg){
         techMessage = "["+ getDate() + "]" + msg;
         return techMessage;
+    }
+
+    public String getFormattedMessage(String msg){
+        formattedMessage = msg;
+        return formattedMessage;
     }
 }

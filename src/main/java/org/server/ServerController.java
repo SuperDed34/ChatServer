@@ -25,6 +25,7 @@ public class ServerController {
             client = server.accept();
             System.out.println(msg.getTechFormattedMessage("User " + client.getInetAddress()+ "connected"));
             connectionList.add(new ServerThreader(client));
+            userList.add(new User("test", client.getInetAddress(), "test"));
         }
     }
 
